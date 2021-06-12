@@ -31,19 +31,34 @@
   }
 }
 
-.button-sm {
-  @include button-size(5px, 10px, 5px);
-}
+//
+// .button-sm {
+//   @include button-size(5px, 10px, 5px);
+// }
+// .button-md {
+//   @include button_size(
+//     $padding-y: 10px,
+//     $padding-x: 20px,
+//     $border-radius: 7px,
+//     $font-size: 14px
+//   );
+// }
+// .button-lg {
+//   @include button-size(15px, 35px, 9px, 16px);
+// }
 
-.button-md {
-  @include button_size(
-    $padding-y: 10px,
-    $padding-x: 20px,
-    $border-radius: 7px,
-    $font-size: 14px
-  );
-}
+//
+@mixin button-type($selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      $mul: $i + 1;
+      padding: 5px * $mul 10px * $mul;
+      border-radius: 5px * $mul;
 
-.button-lg {
-  @include button-size(15px, 35px, 9px, 16px);
+      & > .button-title {
+        font-size: 12px * $mul;
+      }
+    }
+  }
 }
+@include button-type('.button-sm', '.button-md', '.button-lg');
