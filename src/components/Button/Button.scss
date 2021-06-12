@@ -1,4 +1,4 @@
-@mixin button-size($padding-y, $padding-x, $border-radius, $font-size) {
+@mixin button-size($padding-y, $padding-x, $border-radius, $font-size: 12px) {
   padding: $padding-y $padding-x;
   border-radius: $border-radius;
 
@@ -36,7 +36,7 @@
 }
 
 .button-md {
-  @include button-size(10px, 20px, 7px, 14px);
+  @include button_size(10px, 20px, 7px);
 }
 
 .button-lg {
