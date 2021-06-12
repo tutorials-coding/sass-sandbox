@@ -32,11 +32,16 @@
 }
 
 .button-sm {
-  @include button-size(5px, 10px, 5px, 12px);
+  @include button-size(5px, 10px, 5px);
 }
 
 .button-md {
-  @include button_size(10px, 20px, 7px);
+  @include button_size(
+    $padding-y: 10px,
+    $padding-x: 20px,
+    $border-radius: 7px,
+    $font-size: 14px
+  );
 }
 
 .button-lg {
