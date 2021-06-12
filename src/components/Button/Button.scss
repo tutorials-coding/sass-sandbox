@@ -48,11 +48,11 @@
   }
 }
 
-// base mixin implementation
-// .button-sm {
+/* base mixin implementation */
+// .button-size-sm {
 //   @include button-size(5px, 10px, 5px);
 // }
-// .button-md {
+// .button-size-md {
 //   @include button_size(
 //     $padding-y: 10px,
 //     $padding-x: 20px,
@@ -60,12 +60,12 @@
 //     $font-size: 14px
 //   );
 // }
-// .button-lg {
+// .button-size-lg {
 //   @include button-size(15px, 35px, 9px, 16px);
 // }
 
-// any number of arguments
-@mixin button-type($selectors...) {
+/* any number of arguments */
+@mixin button-size($selectors...) {
   @for $i from 0 to length($selectors) {
     #{nth($selectors, $i + 1)} {
       $mul: $i + 1;
@@ -78,9 +78,9 @@
     }
   }
 }
-@include button-type('.button-sm', '.button-md', '.button-lg');
+@include button-size('.button-size-sm', '.button-size-md', '.button-size-lg');
 
-// arbitrary keyword arguments
+/* arbitrary keyword arguments */
 @mixin button-types($args...) {
   @each $name, $color in meta.keywords($args) {
     .button-type-#{$name} {

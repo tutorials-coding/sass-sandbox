@@ -1,9 +1,9 @@
 import './Button.scss'
 
 const buttonSizeClassName = {
-  sm: 'button-sm',
-  md: 'button-md',
-  lg: 'button-lg',
+  sm: 'button-size-sm',
+  md: 'button-size-md',
+  lg: 'button-size-lg',
 }
 
 const buttonTypeClassName = {
