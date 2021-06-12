@@ -1,0 +1,29 @@
+.button {
+  width: 100px;
+  height: 30px;
+
+  cursor: pointer;
+
+  padding: 5px 10px;
+
+  background-color: #e1f5f3;
+  outline: none;
+
+  border: 2px solid #085698;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #6dacd0;
+  }
+
+  &:active {
+    background-color: #085698;
+    > .button-title {
+      color: #6dacd0;
+    }
+  }
+
+  > .button-title {
+    color: #085698;
+  }
+}

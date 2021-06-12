@@ -1,5 +1,9 @@
 import './Button.scss'
 
-export function Button() {
-  return <div>hello</div>
+export function Button({ title, onClick }) {
+  return (
+    <button className="button" onClick={onClick}>
+      <span className="button-title">{title}</span>
+    </button>
+  )
 }
