@@ -1,10 +1,9 @@
-@mixin button-size() {
-  padding: 5px 10px;
-  height: 30px;
-  border-radius: 5px;
+@mixin button-size($padding-y, $padding-x, $border-radius, $font-size) {
+  padding: $padding-y $padding-x;
+  border-radius: $border-radius;
 
   & > .button-title {
-    font-size: 12px;
+    font-size: $font-size;
   }
 }
 
@@ -33,5 +32,13 @@
 }
 
 .button-sm {
-  @include button-size();
+  @include button-size(5px, 10px, 5px, 12px);
+}
+
+.button-md {
+  @include button-size(10px, 20px, 7px, 14px);
+}
+
+.button-lg {
+  @include button-size(15px, 35px, 9px, 16px);
 }
