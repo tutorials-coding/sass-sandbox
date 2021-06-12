@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 @mixin button-size($padding-y, $padding-x, $border-radius, $font-size: 12px) {
   padding: $padding-y $padding-x;
   border-radius: $border-radius;
@@ -40,7 +42,7 @@
   }
 }
 
-//
+// base mixin implementation
 // .button-sm {
 //   @include button-size(5px, 10px, 5px);
 // }
@@ -56,7 +58,7 @@
 //   @include button-size(15px, 35px, 9px, 16px);
 // }
 
-//
+// any number of arguments
 @mixin button-type($selectors...) {
   @for $i from 0 to length($selectors) {
     #{nth($selectors, $i + 1)} {
@@ -72,17 +74,16 @@
 }
 @include button-type('.button-sm', '.button-md', '.button-lg');
 
-//
-// @mixin button-types($args...) {
-//   @each $name, $color in $args {
-//     .button-type-#{$name} {
-//       border: 2px solid $color;
+// arbitrary keyword arguments
+@mixin button-types($args...) {
+  @each $name, $color in meta.keywords($args) {
+    .button-type-#{$name} {
+      border: 2px solid $color;
 
-//       > .button-title {
-//         color: $color;
-//       }
-//     }
-//   }
-// }
-
-// @include button-types($success: #080, $error: #800, $info: #085698);
+      > .button-title {
+        color: $color;
+      }
+    }
+  }
+}
+@include button-types($success: #080, $error: #800, $info: #085698);

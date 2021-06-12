@@ -12,6 +12,10 @@ function App() {
       <Button title="Confirm changes" onClick={handleClick} size="sm" />
       <Button title="Confirm changes" onClick={handleClick} size="md" />
       <Button title="Confirm changes" onClick={handleClick} size="lg" />
+
+      <Button title="Confirm changes" onClick={handleClick} type="info" />
+      <Button title="Confirm changes" onClick={handleClick} type="success" />
+      <Button title="Confirm changes" onClick={handleClick} type="error" />
     </div>
   )
 }

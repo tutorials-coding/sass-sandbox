@@ -6,15 +6,18 @@ const buttonSizeClassName = {
   lg: 'button-lg',
 }
 
-// const buttonTypeClassName = {
-//   success: 'button-type-success',
-//   error: 'button-type-error',
-//   info: 'button-type-info',
-// }
+const buttonTypeClassName = {
+  success: 'button-type-success',
+  error: 'button-type-error',
+  info: 'button-type-info',
+}
 
-export function Button({ title, onClick, size = 'sm' }) {
+export function Button({ title, onClick, size = 'sm', type = 'info' }) {
   return (
-    <button className={`button ${buttonSizeClassName[size]}`} onClick={onClick}>
+    <button
+      className={`button ${buttonSizeClassName[size]} ${buttonTypeClassName[type]}`}
+      onClick={onClick}
+    >
       <span className="button-title">{title}</span>
     </button>
   )
