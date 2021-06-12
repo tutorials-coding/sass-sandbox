@@ -1,3 +1,14 @@
+// this is a silent comment
+
+/*
+  this a loud comment
+*/
+
+/*! 
+  this comment will be shown even in the minified output
+  sass --style=compressed --watch ./sass/styles.scss ./sass/output.css
+*/
+
 .main-container {
   .h1 {
     background-color: green;
