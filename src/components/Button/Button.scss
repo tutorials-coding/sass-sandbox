@@ -1,16 +1,20 @@
-.button {
-  width: 100px;
-  height: 30px;
-
-  cursor: pointer;
-
+@mixin button-size() {
   padding: 5px 10px;
+  height: 30px;
+  border-radius: 5px;
+
+  & > .button-title {
+    font-size: 12px;
+  }
+}
+
+.button {
+  cursor: pointer;
 
   background-color: #e1f5f3;
   outline: none;
 
   border: 2px solid #085698;
-  border-radius: 5px;
 
   &:hover {
     background-color: #6dacd0;
@@ -26,4 +30,8 @@
   > .button-title {
     color: #085698;
   }
+}
+
+.button-sm {
+  @include button-size();
 }

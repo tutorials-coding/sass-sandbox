@@ -9,7 +9,8 @@ function App() {
 
   return (
     <div>
-      <Button title="Save" onClick={handleClick} />
+      <Button title="Save" onClick={handleClick} size="sm" />
+      <Button title="Save" onClick={handleClick} size="md" />
     </div>
   )
 }
