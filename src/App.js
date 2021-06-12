@@ -16,6 +16,9 @@ function App() {
       <Button title="Confirm changes" onClick={handleClick} type="info" />
       <Button title="Confirm changes" onClick={handleClick} type="success" />
       <Button title="Confirm changes" onClick={handleClick} type="error" />
+
+      <Button title="Confirm changes" onClick={handleClick} disabled />
+      <Button title="Confirm changes" onClick={handleClick} disabled={false} />
     </div>
   )
 }

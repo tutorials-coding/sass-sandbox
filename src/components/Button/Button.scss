@@ -9,13 +9,13 @@
   }
 }
 
-@mixin hover {
+@mixin hover($types...) {
   &:not([disabled]):hover {
-    @content;
+    @content ('disabled');
   }
-  // &:active {
-  //   @content;
-  // }
+  &:hover {
+    @content ('not-disabled');
+  }
 }
 
 .button {
@@ -26,8 +26,14 @@
 
   border: 2px solid #085698;
 
-  @include hover {
+  @include hover() using ($type) {
     background-color: #6dacd0;
+    @if $type == 'disabled' {
+      background-color: grey;
+    }
+    @if $type == 'not-disabled' {
+      background-color: lightgrey;
+    }
   }
 
   &:active {

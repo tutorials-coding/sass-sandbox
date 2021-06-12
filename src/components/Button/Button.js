@@ -12,11 +12,18 @@ const buttonTypeClassName = {
   info: 'button-type-info',
 }
 
-export function Button({ title, onClick, size = 'sm', type = 'info' }) {
+export function Button({
+  title,
+  onClick,
+  size = 'sm',
+  type = 'info',
+  disabled = false,
+}) {
   return (
     <button
       className={`button ${buttonSizeClassName[size]} ${buttonTypeClassName[type]}`}
       onClick={onClick}
+      disabled={disabled}
     >
       <span className="button-title">{title}</span>
     </button>
