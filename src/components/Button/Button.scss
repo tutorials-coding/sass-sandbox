@@ -7,6 +7,15 @@
   }
 }
 
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+  // &:active {
+  //   @content;
+  // }
+}
+
 .button {
   cursor: pointer;
 
@@ -15,14 +24,14 @@
 
   border: 2px solid #085698;
 
-  &:hover {
+  @include hover {
     background-color: #6dacd0;
   }
 
   &:active {
     background-color: #085698;
     > .button-title {
-      color: #6dacd0;
+      color: #e1f5f3;
     }
   }
 
@@ -62,3 +71,18 @@
   }
 }
 @include button-type('.button-sm', '.button-md', '.button-lg');
+
+//
+// @mixin button-types($args...) {
+//   @each $name, $color in $args {
+//     .button-type-#{$name} {
+//       border: 2px solid $color;
+
+//       > .button-title {
+//         color: $color;
+//       }
+//     }
+//   }
+// }
+
+// @include button-types($success: #080, $error: #800, $info: #085698);

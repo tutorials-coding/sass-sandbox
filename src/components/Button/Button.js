@@ -6,6 +6,12 @@ const buttonSizeClassName = {
   lg: 'button-lg',
 }
 
+// const buttonTypeClassName = {
+//   success: 'button-type-success',
+//   error: 'button-type-error',
+//   info: 'button-type-info',
+// }
+
 export function Button({ title, onClick, size = 'sm' }) {
   return (
     <button className={`button ${buttonSizeClassName[size]}`} onClick={onClick}>
