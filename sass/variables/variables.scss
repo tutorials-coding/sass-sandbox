@@ -17,7 +17,7 @@ $color1: #00ff00; // is not presented in css output
   background-color: $color1;
 }
 
-// not updates previous values
+// does not update previous values
 $fontSize: 18px;
 .title {
   font-size: $fontSize;
@@ -27,7 +27,7 @@ $fontSize: 14px;
   font-size: $fontSize;
 }
 
-// 
+// just mixin usage
 .button {
   @include m1.button();
 }
