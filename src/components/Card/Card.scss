@@ -1,0 +1,15 @@
+.card-container {
+  background-color: var(--background-color);
+  border-radius: 5px;
+  padding: 10px;
+
+  .card-title {
+    font-size: var(--font-size-title);
+    color: var(--font-color);
+  }
+
+  .card-subtitle {
+    font-size: var(--font-size-subtitle);
+    color: var(--font-color);
+  }
+}
