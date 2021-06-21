@@ -1,0 +1,13 @@
+:root {
+  --background-color-theme1: #efdcbb;
+  --font-color-theme1: #d04931;
+
+  --background-color-theme2: #438844;
+  --font-color-theme2: #27483d;
+
+  --font-size-title: 16px;
+  --font-size-subtitle: 12px;
+
+  --background-color: var(--background-color-theme1);
+  --font-color: var(--font-color-theme1);
+}
