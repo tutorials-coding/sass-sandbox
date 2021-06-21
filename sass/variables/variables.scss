@@ -32,5 +32,30 @@ $fontSize: 14px;
   @include m1.button();
 }
 
+// global vs local scope
+$var1: 'global value';
+
+.p1::before {
+  $var1: 'local value';
+  content: $var1;
+}
+
+.p2::before {
+  content: $var1;
+}
+
+// !global 
+$var2: 'global value 1';
+
+.p1::before {
+  $var2: 'global value 2' !global;
+  content: $var2;
+}
+
+.p2::before {
+  content: $var2;
+}
+
+
 
 
