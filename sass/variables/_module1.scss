@@ -1,0 +1,10 @@
+$borderRadius: 5px;
+$fontColor: #0000ff;
+
+@mixin button() {
+  border-radius: $borderRadius;
+
+  .button-title {
+    font-size: $fontColor;
+  }
+}

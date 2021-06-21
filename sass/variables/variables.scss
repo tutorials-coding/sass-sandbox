@@ -1,3 +1,5 @@
+@use 'module1' as m1;
+
 // basic usage
 $color1: #00ff00; // is not presented in css output
 
@@ -16,7 +18,9 @@ $fontSize: 14px;
 }
 
 // 
-
+.button {
+  @include m1.button();
+}
 
 
 
