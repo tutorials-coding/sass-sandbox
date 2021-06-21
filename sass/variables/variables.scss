@@ -1,4 +1,6 @@
-@use 'module1' as m1;
+@use 'module1' as m1 with (
+  $fontColor: #cd29ff
+);
 
 // basic usage
 $color1: #00ff00; // is not presented in css output
