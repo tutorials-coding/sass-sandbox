@@ -3,6 +3,13 @@
   $fontColor: #cd29ff
 );
 
+// built-in variables
+@use "sass:math" as math;
+@debug math.$e;
+@debug math.$pi;
+
+// math.$e: 0; // Error: Cannot modify built-in variable.
+
 // basic usage
 $color1: #00ff00; // is not presented in css output
 
