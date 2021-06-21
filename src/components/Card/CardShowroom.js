@@ -16,12 +16,12 @@ export function CardShowroom() {
   }, [theme])
 
   return (
-    <div>
+    <>
       <Card title="This is a title" subtitle="This is a subtitle." />
 
       <button type="button" onClick={toggleTheme}>
         Toggle theme (current theme: {theme})
       </button>
-    </div>
+    </>
   )
 }
