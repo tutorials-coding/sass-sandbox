@@ -1,5 +1,5 @@
-$borderRadius: 5px;
-$fontColor: #0000ff;
+$borderRadius: 5px !default;
+$fontColor: #0000ff !default;
 
 @mixin button() {
   border-radius: $borderRadius;
