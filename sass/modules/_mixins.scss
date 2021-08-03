@@ -1,0 +1,17 @@
+$borderRadius: 5px !default;
+$fontColor: #0000ff !default;
+
+// private member
+$-backgroundColor: #00ff00;
+
+@mixin button() {
+  border-radius: $borderRadius;
+  background-color: $-backgroundColor;
+
+  .button-title {
+    font-size: $fontColor;
+  }
+}
+
+@mixin button2() {
+}

@@ -1,0 +1,19 @@
+@use "mixins";
+@use "variables" as v;
+@use "themes/theme-variables" as *;
+@use "tabs";
+
+.button {
+  @include mixins.button();
+  // background-color: mixins.$-backgroundColor; // Error: Private members can't be accessed from outside their modules.
+}
+
+p {
+  font-size: v.$fontSize;
+}
+
+span {
+  font-size: $themeFontSize;
+  // font-size: theme-variables.$themeFontSize;
+}
+

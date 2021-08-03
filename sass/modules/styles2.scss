@@ -1,0 +1,10 @@
+@use 'styles-forwarded.scss';
+
+.button {
+  @include styles-forwarded.button();
+}
+
+p {
+  font-size: styles-forwarded.$v-fontSize;
+}
+
