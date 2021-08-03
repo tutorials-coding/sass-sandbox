@@ -1,0 +1,36 @@
+// nesting rules
+main {
+  h1 {
+    color: #00ff00;
+  }
+  section {
+    background-color: antiquewhite;
+
+    .title-container {
+      border-radius: 5px;
+    }
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// nesting props
+main {
+  // font also
+  background: {
+    color: #00ff00;
+    position: 50% center;
+    repeat: no-repeat;
+  }
+}
+
+// namespace can have value as well
+main {
+  background: #00ff00 {
+    position: 50% center;
+    repeat: no-repeat;
+  }
+}
+

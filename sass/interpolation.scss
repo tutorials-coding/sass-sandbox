@@ -1,0 +1,38 @@
+// inside class name
+$theme-prefix: theme1;
+p.theme-#{$theme-prefix} {
+  color: #00ff00;
+}
+
+// prop names
+$prop: color;
+main {
+  background-#{$prop}: #00ff00;
+}
+
+// in calc
+$size: 12px;
+$modificator: 3;
+span {
+  font-size: $size / $modificator;
+  font-size: #{$size} / #{$modificator};
+}
+
+.a {
+  #{&}--modifier {
+    color: blue;
+  }
+}
+.a {
+  &--modifier {
+    color: blue;
+  }
+}
+
+@mixin define-icon($name) {
+  .icon-#{$name} {
+    content: $name;
+  }
+}
+@include define-icon("computer")
+
