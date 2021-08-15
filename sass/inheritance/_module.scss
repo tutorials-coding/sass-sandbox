@@ -1,0 +1,25 @@
+// public
+// %base-label {
+//   border-radius: 5px;
+//   width: 100%;
+//   height: 50px;
+//   opacity: 0.7;
+// }
+
+// private
+// %-base-label or %_base-label
+%-base-label {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  opacity: 0.7;
+}
+
+// private placeholder selector can be used inside the modul
+.success-label {
+  @extend %-base-label;
+  
+  background-color: lightgreen;
+  border-color: green;
+  color: green;
+}

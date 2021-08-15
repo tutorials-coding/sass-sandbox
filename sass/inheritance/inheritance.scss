@@ -1,0 +1,85 @@
+@use 'module';
+
+// <p class="message message-info">
+//   Settings were updated!
+// </p>
+
+/* 1st approach */
+.message {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+}
+.message-info {
+  background-color: lightblue;
+  border-color: blue;
+  color: blue;
+}
+// .message-success {}
+
+/* 2nd approach */
+.message-info {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  background-color: lightblue;
+  border-color: blue;
+  color: blue;
+}
+// .message-success {}
+
+/* 3rd approach */
+.message {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  opacity: 0.7;
+
+  // pseudo classes are also inherited
+  &:hover {
+    opacity: 1;
+  }
+
+  // put it here or in .message-info
+  // &-info {
+  //   @extend .message;
+  //   background-color: lightblue;
+  //   border-color: blue;
+  //   color: blue;
+  // }
+}
+.message-info {
+  @extend .message;
+  background-color: lightblue;
+  border-color: blue;
+  color: blue;
+}
+
+/* placeholder selectors */
+%base-message {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  opacity: 0.7;
+}
+
+.success-message {
+  @extend %base-message;
+  
+  background-color: lightgreen;
+  border-color: green;
+  color: green;
+}
+
+// private placeholder selectors no available here
+.info-label {
+  // no need to use module namespace with placeholder selectors
+  // @extend %base-label;
+  // @extend %base-label !optional; // if you want the @extend to do nothing if the extended selector doesn’t exist, just add !optional to the end
+  
+  background-color: lightblue;
+  border-color: blue;
+  color: blue;
+}
+
+
