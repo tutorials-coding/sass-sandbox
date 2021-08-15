@@ -1,0 +1,57 @@
+@use "sass:list";
+@use "sass:meta";
+
+@function pow($base, $exp) {
+  $res: 1;
+  @for $_ from 1 through $exp {
+    $res: $res * $base;
+  }
+  @return $res;
+}
+
+.main {
+  font-size: pow(2, 2) * 1px;
+  // font-size: #{pow(2, 2)}px;
+}
+
+// with default value of the arg
+@function concat($str, $times, $del: ' ') {
+  $res: '';
+  @for $_ from 1 through $times {
+    @if $res == '' {
+      $res: $res + $str
+    } @else {
+      $res: $res + $del + $str;
+    }
+  }
+  @return $res;
+}
+
+@debug concat('hello', 3, '_');
+@debug concat('hello', 3);
+// named args
+@debug concat('hello', $del: '@', $times: 5);
+
+// taking arbitrary arguments
+@function getMax($numbers...) {
+  $max: list.nth($numbers, 1);
+  @each $number in $numbers {
+    @if $number > $max {
+      $max: $number;
+    }
+  }
+  @return $max;
+}
+
+@debug getMax(10, 30, 20);
+
+// taking arbitrary keyword arguments 
+@function concatKeywords($args...) {
+  $str: '';
+  @each $key, $val in meta.keywords($args) {
+    $str: $str + $key + ': ' + $val + '; ';
+  }
+  @return $str
+}
+
+@debug concatKeywords($val1: #f00, $val2: #0f0, $val3: #00f);

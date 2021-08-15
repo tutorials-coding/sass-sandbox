@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sass": "node ./node_modules/sass/sass.js",
-    "sass:watch": "npm run sass -- --watch ./sass/inheritance/inheritance.scss ./sass/output.css"
+    "sass:watch": "npm run sass -- --watch ./sass/functions/functions.scss ./sass/output.css"
   },
   "eslintConfig": {
     "extends": [
