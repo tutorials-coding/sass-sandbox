@@ -1,0 +1,16 @@
+@debug Example with 'through', includes 3;
+@for $i from 1 through 3 {
+  @debug $i
+};
+
+@debug Example with 'to', does not include 3;
+@for $i from 1 to 3 {
+  @debug $i
+};
+
+$base-color: #0f0;
+@for $i from 1 through 2 {
+  li:nth-child(2n + #{$i}) {
+    background-color: lighten($base-color, $i * 20%);
+  }
+}

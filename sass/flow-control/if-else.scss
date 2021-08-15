@@ -1,0 +1,29 @@
+@mixin message($type) {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+
+  @if $type == success {
+    background-color: lightgreen;
+    border-color: green;
+    color: green;
+  } @else if $type == info {
+    background-color: lightblue;
+    border-color: blue;
+    color: blue;
+  } @else {
+    @warn No such type as $type
+  }
+}
+
+.message-success {
+  @include message(success);
+}
+.message-info {
+  @include message(info);
+}
+.message-error {
+  @include message(error);
+}
+
+

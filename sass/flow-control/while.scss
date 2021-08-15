@@ -1,0 +1,34 @@
+$value: 5;
+$max: 10;
+
+@while $value < $max {
+  @debug value is $value;
+  $value: $value + 1;
+}
+
+
+@function fib($num) {
+  $a: 0;
+  $b: 1;
+
+  @while $num > 0 {
+    $temp: $b;
+    $b: $b + $a;
+    $a: $temp;
+    $num: $num - 1;
+  }
+
+  @return $a;
+}
+
+.main {
+  // 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+  font-size: fib(0);
+  font-size: fib(1);
+  font-size: fib(2);
+  font-size: fib(3);
+  font-size: fib(4);
+  font-size: fib(5);
+  font-size: fib(6);
+  font-size: fib(7);
+}

@@ -1,0 +1,56 @@
+@use "sass:meta";
+
+/* each with list */
+$sizes: 8, 16, 32;
+@each $size in $sizes {
+  .ml-#{$size}p {
+    margin-left: #{$size}px;
+  }
+  .mr-#{$size}p {
+    margin-right: #{$size}px;
+  }
+}
+
+/* each with maps */
+$types: ("success": #0f0, "error": #f00, "info": #00f);
+
+@each $type, $color in $types {
+  .button-type-#{$type} {
+    border: 2px solid $color;
+
+    > .button-title {
+      color: $color;
+    }
+  }
+}
+
+
+/* each with maps, keywords */
+@mixin button-types($args...) {
+  @each $name, $color in meta.keywords($args) {
+    .button-type-#{$name} {
+      border: 2px solid $color;
+
+      > .button-title {
+        color: $color;
+      }
+    }
+  }
+}
+@include button-types($success: #0f0, $error: #f00, $info: #00f);
+
+/* each with maps, destructuring, list of lists */
+$types2:
+  "success" #0f0,
+  "error" #f00,
+  "info" #00f;
+
+@each $type, $color in $types2 {
+  .button-type-#{$type} {
+    border: 2px solid $color;
+
+    > .button-title {
+      color: $color;
+    }
+  }
+}
