@@ -1,6 +1,6 @@
 // inside class name
-$theme-prefix: theme1;
-p.theme-#{$theme-prefix} {
+$theme-suffix: theme1;
+p.theme-#{$theme-suffix} {
   color: #00ff00;
 }
 
@@ -35,4 +35,3 @@ span {
   }
 }
 @include define-icon("computer")
-
