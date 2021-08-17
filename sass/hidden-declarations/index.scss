@@ -1,0 +1,33 @@
+/* built-in if fn */
+@debug if(2 * 2 == 4, 1, 2);
+
+/* just null */
+.button {
+  border: 1px solid green;
+  border-radius: null; //
+}
+
+/* using if */
+$border-radius: 5px;
+
+$rounded: false; // true
+
+.button {
+  border: 1px solid green;
+  border-radius: if($rounded, $border-radius, null);
+}
+
+/* Example with & */
+@mixin app-background($color) {
+  // &.app-background {
+  #{if(&, '&.app-background', '.app-background')} {
+    background-color: $color;
+    color: rgba(#fff, 0.75);
+  }
+}
+
+@include app-background(#036);
+
+.sidebar {
+  @include app-background(#c6538c);
+} 
