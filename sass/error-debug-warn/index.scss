@@ -1,0 +1,49 @@
+/* @error */
+
+@function concat($str, $times, $del: ' ') {
+  @if $times <= 0 {
+    @error 'Property #{$times} should be more than 0';
+  }
+  $res: '';
+  @for $_ from 1 through $times {
+    @if $res == '' {
+      $res: $res + $str
+    } @else {
+      $res: $res + $del + $str;
+    }
+  }
+  @return $res;
+}
+
+@debug 'concat', concat('hello', 3, '_');
+@debug 'concat', concat('hello', 3);
+// @debug concat('hello', 0); // Error
+
+
+/* @warn */
+@function concat2($str, $times, $del: ' ') {
+  @if $times <= 0 {
+    @warn 'Property #{$times} should be more than 0';
+    $times: 1 // set default value
+  }
+  $res: '';
+  @for $_ from 1 through $times {
+    @if $res == '' {
+      $res: $res + $str
+    } @else {
+      $res: $res + $del + $str;
+    }
+  }
+  @return $res;
+}
+
+@debug 'concat2', concat2('hello', 3);
+@debug 'concat2', concat2('hello', 0); // Warning
+
+/* @debug */
+@debug hello;
+
+/* some other styles */
+.main {
+  background-color: green;
+}
