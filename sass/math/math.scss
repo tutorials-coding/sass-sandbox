@@ -1,0 +1,63 @@
+@use "sass:math";
+
+/* Numbers */
+@debug "=== Numbers ===";
+@debug 2px * 2; // => 4px
+@debug 2px * 2px; // => 4px*px
+@debug #{2 * 2}px; //=> 4px
+@debug #{2}px + 2px; // => 2px2px // #{2}px is a unquoted string which looks like a number
+@debug 2 * 2px; // => 4px
+@debug 2px * 2s; // => 4px*s
+@debug 1s + 2ms; // => 1.002s
+@debug 2e3; // => 2000 // 2 * 10^3
+// @debug 2px + 2s; // => Error
+@debug 2px + 2in; // => 194px // 1 inch = PPI (96px)
+
+/* Numeric operations */
+@debug "=== Numeric operations ===";
+@debug 2px + 3px; // => 5px
+@debug 5px - 2px; // => 3px
+@debug 2px * 3px; // => 6px*px
+@debug 20px % 3px; // => 2px
+@debug 20 % 3; // => 2
+
+/* Numeric unary operations */
+@debug "=== Numeric unary operations ===";
+@debug -(50 * 10); // => -500
+@debug +(50 * 10); // => 500
+
+/* With space separated list, wrap negative num to () */
+@debug "=== Numeric unary operations and space separated list ===";
+$number: 5;
+@debug 10 -$number 30; // => -15 30
+@debug 10 (-$number) 30; // => 10 -5 30
+
+/* Divison */
+@debug "=== Divison ===";
+@debug 30/10; // => 30/10
+@debug (30/10); // => 3 // Deprecation Warning
+@debug math.div(30, 10); // => 3
+
+/* sass:math variables */
+@debug "=== sass:math variables ===";
+@debug math.$e;
+@debug math.$pi;
+
+/* sass:math bounding functions */
+@debug math.ceil(4.2); // => 5
+@debug math.clamp(1, 5, 2); // math.clamp($min, $number, $max)
+@debug math.floor(4.9); // => 4
+@debug math.round(4.7); // => 5
+
+@debug math.max(10px, 20px, 30px, 5px); // => 30px
+@debug math.min(10px, 20px, 30px, 5px); // => 5px
+@debug math.abs(-5px); // => 5px
+@debug math.hypot(3, 4); // => 5 // length of the n-dimensional vector sqrt(a^2 + b^2 + ...)
+
+// log, pow, sqrt, div, percentage, random
+@debug math.percentage(math.div(100px, 50px)); // 200%
+// cos, sin, tan, acos, asin, atan, atan2  
+// math.compatible($number1, $number2) and comparable // Returns whether $number1 and $number2 have compatible units.
+@debug math.compatible(1px, 2s); // => false
+@debug comparable(1px, 2s); // => false
+// is-unitless
