@@ -1,0 +1,21 @@
+@use "sass:map";
+
+@debug (); // => () // empty map
+@debug ('theme1': #00ff00, 'theme2': #0000ff); // => ("theme1": #00ff00, "theme2": #0000ff)
+
+$fonts: (
+  "Helvetica": (
+    "weights": (
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    )
+  )
+);
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+@debug map.get($font-weights, "medium"); // 500
+@debug map.set($font-weights, "light", 100); // returns new map
+@debug $font-weights;
+$font-weights: map.set($font-weights, "light", 100);
+@debug $font-weights;
